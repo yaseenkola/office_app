@@ -5,7 +5,7 @@ class MexpensesController < ApplicationController
   def index
     @mexpenses = Mexpense.order(date: :desc, balance: :desc)
     
-    balance = 100
+    balance = 554
     @mexpenses.each do |mexpense|
     balance += mexpense.credit.to_f - mexpense.debit.to_f
     mexpense.balance = balance
