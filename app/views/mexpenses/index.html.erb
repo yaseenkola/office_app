@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mexpenses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Particulars</th>
+      <th>Debit</th>
+      <th>Credit</th>
+      <th>Balance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mexpenses.each do |mexpense| %>
+      <tr>
+        <td><%= mexpense.date %></td>
+        <td><%= mexpense.particulars %></td>
+        <td><%= mexpense.debit %></td>
+        <td><%= mexpense.credit %></td>
+        <td><%= mexpense.balance %></td>
+        <td><%= link_to 'Show', mexpense %></td>
+        <td><%= link_to 'Edit', edit_mexpense_path(mexpense) %></td>
+        <td><%= link_to 'Destroy', mexpense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mexpense', new_mexpense_path %>

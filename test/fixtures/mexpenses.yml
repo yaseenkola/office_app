@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-02-23
+  particulars: MyString
+  debit: 1
+  credit: 1
+  balance: 1
+
+two:
+  date: 2021-02-23
+  particulars: MyString
+  debit: 1
+  credit: 1
+  balance: 1
