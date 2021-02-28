@@ -4,13 +4,6 @@ class MexpensesController < ApplicationController
   # GET /mexpenses or /mexpenses.json
   def index
     @mexpenses = Mexpense.order(date: :desc, balance: :desc)
-    
-    balance = 554
-    @mexpenses.each do |mexpense|
-    balance += mexpense.credit.to_f - mexpense.debit.to_f
-    mexpense.balance = balance
-    end
-    # @mexpenses = @mexpenses.sort { |e| e.balance }
   end
 
   # GET /mexpenses/1 or /mexpenses/1.json
@@ -71,6 +64,6 @@ class MexpensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mexpense_params
-      params.require(:mexpense).permit(:date, :particulars, :debit, :credit, :balance)
+      params.require(:mexpense).permit(:date, :particulars, :debit, :credit)
     end
 end
